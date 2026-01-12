@@ -166,3 +166,35 @@ body {
 .hero-text .vision {
     color: #ffffff;
 }
+
+/* =========================
+   MOBILE RESPONSIVENESS
+   ========================= */
+@media (max-width: 768px) {
+
+    .hero {
+        height: 100vh;
+    }
+
+    .hero-text {
+        bottom: 3%;              /* push text further down */
+        max-width: 90%;
+    }
+
+    .hero-box {
+        padding: 18px 20px;      /* smaller box */
+    }
+
+    .hero-text h1 {
+        font-size: 34px;         /* smaller name */
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+    .vision {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
