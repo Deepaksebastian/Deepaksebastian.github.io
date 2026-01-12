@@ -1,36 +1,71 @@
-/* =========================
-   RESET
-   ========================= */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-   ========================= */
+/* BODY */
 body {
     font-family: 'Inter', sans-serif;
     background-color: #0d0d0d;
     color: #e5e5e5;
     line-height: 1.7;
+    padding-top: 70px;
 }
 
-/* =========================
-   HERO SECTION
-   ========================= */
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+/* HERO */
 .hero {
     position: relative;
     height: 100vh;
-    overflow: hidden;
 }
 
 .hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(55%);
+    filter: brightness(65%) contrast(105%);
 }
 
 .hero-text {
@@ -43,26 +78,27 @@ body {
     padding: 0 20px;
 }
 
+.hero-box {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 30px 35px;
+    border-radius: 10px;
+}
+
 .hero-text h1 {
     font-family: 'Playfair Display', serif;
     font-size: 58px;
-    margin-bottom: 12px;
 }
 
 .tagline {
     font-size: 20px;
-    opacity: 0.9;
 }
 
 .vision {
     margin-top: 22px;
     font-size: 18px;
-    opacity: 0.85;
 }
 
-/* =========================
-   SECTIONS
-   ========================= */
+/* SECTIONS */
 .section {
     max-width: 1000px;
     margin: 100px auto;
@@ -75,28 +111,17 @@ body {
     margin-bottom: 25px;
 }
 
-/* =========================
-   EXPERIENCE ITEMS
-   ========================= */
+/* EXPERIENCE */
 .item {
     margin-bottom: 45px;
 }
 
-.item h3 {
-    font-size: 22px;
-    font-weight: 500;
-}
-
 .item span {
-    display: block;
-    font-size: 14px;
     color: #aaaaaa;
-    margin-bottom: 8px;
+    font-size: 14px;
 }
 
-/* =========================
-   SKILLS
-   ========================= */
+/* SKILLS */
 .skills {
     list-style: none;
     display: grid;
@@ -105,14 +130,12 @@ body {
 }
 
 .skills li {
-    background-color: #161616;
+    background: #161616;
     padding: 14px 18px;
     border-left: 4px solid #ffffff;
 }
 
-/* =========================
-   GALLERY
-   ========================= */
+/* GALLERY */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -124,12 +147,9 @@ body {
     height: 230px;
     object-fit: cover;
     border-radius: 6px;
-    filter: grayscale(20%);
 }
 
-/* =========================
-   CONTACT
-   ========================= */
+/* CONTACT */
 .contact a {
     color: #ffffff;
     text-decoration: none;
@@ -139,54 +159,28 @@ body {
     text-decoration: underline;
 }
 
-/* =========================
-   FOOTER
-   ========================= */
+/* FOOTER */
 .footer {
     text-align: center;
     padding: 40px;
-    background-color: #000000;
+    background: #000;
     font-size: 14px;
     opacity: 0.7;
 }
 
-/* =========================
-   HERO TEXT BACKGROUND BOX
-   ========================= */
-.hero-box {
-    background-color: rgba(0, 0, 0, 0.65); /* dark transparent background */
-    padding: 30px 35px;
-    border-radius: 10px;
-    backdrop-filter: blur(4px);
-}
-
-/* Improve text contrast */
-.hero-text h1,
-.hero-text .tagline,
-.hero-text .vision {
-    color: #ffffff;
-}
-
-/* =========================
-   MOBILE RESPONSIVENESS
-   ========================= */
+/* MOBILE FIX */
 @media (max-width: 768px) {
 
+    .nav-links {
+        display: none;
+    }
+
     .hero {
-        height: 100vh;
-    }
-
-    .hero-text {
-        bottom: 3%;              /* push text further down */
-        max-width: 90%;
-    }
-
-    .hero-box {
-        padding: 18px 20px;      /* smaller box */
+        height: 85vh;
     }
 
     .hero-text h1 {
-        font-size: 34px;         /* smaller name */
+        font-size: 34px;
     }
 
     .tagline {
@@ -194,7 +188,17 @@ body {
     }
 
     .vision {
-        font-size: 14px;
-        line-height: 1.5;
+        font-size: 14.5px;
     }
 }
+/* =========================
+   FIX HEADING HIDDEN BY NAVBAR
+   ========================= */
+.section {
+    scroll-margin-top: 90px;
+}
+
+.hero {
+    scroll-margin-top: 90px;
+}
+
