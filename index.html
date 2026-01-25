@@ -5,7 +5,7 @@
     <title>Deepak Sebastian | Change Management & Digital Adoption Consultant</title>
 
     <!-- SEO -->
-    <meta name="description" content="Deepak Sebastian – Change Management & Digital Adoption Consultant. MBA from IIM Sirmaur. Helping organizations align people, process, and technology for successful transformation.">
+    <meta name="description" content="Deepak Sebastian – Change Management & Digital Adoption Consultant. MBA from IIM Sirmaur. Specialising in people-centered digital transformation and adoption.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Fonts -->
@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <!-- CSS (non-blocking) -->
+    <!-- CSS -->
     <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -23,6 +23,10 @@
 <nav class="navbar">
     <div class="nav-container">
         <div class="logo">Deepak Sebastian</div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -69,8 +73,7 @@
         helping organizations successfully implement digital initiatives by
         driving employee adoption, redesigning processes, and enabling
         behavioral change.
-    </p>
-    <p>
+        <br><br>
         With experience across luxury hospitality, manufacturing, and digital
         transformation projects, I bring a people-first approach to technology-
         led change — ensuring systems are not just implemented, but embraced.
@@ -155,8 +158,19 @@
     © 2026 Deepak Sebastian | All Rights Reserved
 </footer>
 
+<!-- JS -->
 <script defer>
 document.addEventListener("DOMContentLoaded", () => {
+
+    /* MOBILE MENU */
+    const toggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
+    /* LAZY LOAD GALLERY */
     const hero = document.getElementById("hero-img");
     const lazy = document.querySelectorAll(".lazy-img");
 
