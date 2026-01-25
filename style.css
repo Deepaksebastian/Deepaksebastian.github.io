@@ -55,6 +55,16 @@ body {
     color: #ffffff;
 }
 
+/* MOBILE MENU BUTTON */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
 /* HERO */
 .hero {
     position: relative;
@@ -80,7 +90,7 @@ body {
 
 .hero-text {
     position: absolute;
-    bottom: 5%;
+    bottom: 0%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -182,8 +192,24 @@ body {
 /* MOBILE */
 @media (max-width: 768px) {
 
+    .menu-toggle {
+        display: block;
+    }
+
     .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        padding: 15px 20px;
+        border-radius: 8px;
         display: none;
+        gap: 14px;
+    }
+
+    .nav-links.active {
+        display: flex;
     }
 
     .hero {
@@ -201,4 +227,50 @@ body {
     .vision {
         font-size: 14.5px;
     }
+
+    .section {
+        margin: 70px auto;
+    }
 }
+/* MOBILE HERO FIX */
+@media (max-width: 768px) {
+
+    .hero {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-img {
+        height: 55vh;
+        object-fit: cover;
+    }
+
+    .hero-text {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        padding: 20px;
+        margin-top: -80px; /* creates elegant overlap */
+    }
+
+    .hero-box {
+        padding: 22px 20px;
+        border-radius: 12px;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .tagline {
+        font-size: 15px;
+    }
+
+    .vision {
+        font-size: 14px;
+        margin-top: 14px;
+    }
+}
+
+
